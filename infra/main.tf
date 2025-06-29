@@ -21,7 +21,7 @@ resource "google_storage_object_access_control" "public_rule" {
 # Upload the html file to the bucket
 resource "google_storage_bucket_object" "static_site_src" {
   name   = "index.html"
-  source = "../website/index.html"
+  source = "website/index.html"
   bucket = google_storage_bucket.website.name
   
 }
