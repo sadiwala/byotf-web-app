@@ -32,7 +32,6 @@ resource "google_storage_bucket_object" "static_site_src" {
 # Reserve an external IP
 resource "google_compute_global_address" "website" {
   project       = "google-mpf-982916601176"
-  project       = "google-mpf-982916601176"
   provider = google
   name     = "website-lb-ip"
 }
