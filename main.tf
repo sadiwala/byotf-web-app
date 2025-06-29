@@ -2,7 +2,7 @@
 resource "google_storage_bucket" "website" {
   project       = "google-mpf-982916601176"
   provider = google
-  name     = "example-psadiwala-coffee7"
+  name     = "example-psadiwala-sdfg-coffee7"
   location = "US"
 }
 
