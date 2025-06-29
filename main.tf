@@ -28,12 +28,14 @@ resource "google_storage_bucket_object" "static_site_src" {
 
 # Reserve an external IP
 resource "google_compute_global_address" "website" {
+  project       = "google-mpf-982916601176"
   provider = google
   name     = "website-lb-ip"
 }
 
 # Get the managed DNS zone
 data "google_dns_managed_zone" "gcp_coffeetime_dev" {
+  project       = "google-mpf-982916601176"
   provider = google
   name     = "rishab-example"
 }
@@ -50,6 +52,7 @@ resource "google_dns_record_set" "website" {
 
 # Add the bucket as a CDN backend
 resource "google_compute_backend_bucket" "website-backend" {
+  project       = "google-mpf-982916601176"
   provider    = google
   name        = "website-backend"
   description = "Contains files needed by the website"
