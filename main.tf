@@ -8,7 +8,6 @@ resource "google_storage_bucket" "website" {
 
 # Make new objects public
 resource "google_storage_object_access_control" "public_rule" {
-  project       = "google-mpf-982916601176"
   object = google_storage_bucket_object.static_site_src.output_name
   bucket = google_storage_bucket.website.name
   role   = "READER"
@@ -22,7 +21,6 @@ resource "google_storage_object_access_control" "public_rule" {
 
 # Upload the html file to the bucket
 resource "google_storage_bucket_object" "static_site_src" {
-  project       = "google-mpf-982916601176"
   name   = "index.html"
   source = "website/index.html"
   bucket = google_storage_bucket.website.name
